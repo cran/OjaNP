@@ -66,7 +66,7 @@ or pass a function that computes a multivariate location. %Some care is needed w
 This function must accept data sets of the same type as \code{X} (i.e.\ row-wise) and return a numeric vector of length \code{ncol(X)}. 
 For example \code{center = colMeans} will do, whereas \code{center = mean} will not, since \code{mean(X)} computes the (univariate) mean of 
 all elements of the matrix \code{X}. Note that some location functions return a list also containing information on the data or the computation 
-rather than the numeric location estimate only. Via \code{...} arguments can be passed on to the location function, see example 3 below. 
+rather than the numeric location estimate only. Via \code{...} arguments can be passed on to the location function, see example 2 below. 
 The mean and several nonparametric location estimates are implemented and can also be specified by passing a corresponding string. 
 The \code{...} option is then available, too. Being based on the same nonparametric concept the Oja median is the natural location for Oja 
 signs and is hence the default. But since it is the solution of an optimization problem, it may -- depending on the optimization algorithm -- return different values when run on the same data.
@@ -108,14 +108,7 @@ Either a numeric vector, the Oja sign of \code{x}, or
 
 
 \examples{
-### ----<< Example 1 >>---- : 
-# Oja sign of the origin w.r.t. the three 3d unit vectors
-ojaSign(x = c(0,0,0), X = diag(rep(1, 3)), center=colMeans)
-ojaSign(x = c(0,0,0), X = diag(rep(1, 3)), center=ojaMedian)
-
-
-
-### ----<< Example 2 >>---- : 30 points in R^2
+### ----<< Example 1 >>---- : 30 points in R^2
 set.seed(123)
 X <- rmvnorm(n = 30, mean = c(0,0)) # from package 'mvtnorm'
 y <- c(100,100)
@@ -142,7 +135,7 @@ t(apply(X, 1, function(y){ojaSign(X, y, c = colMeans,p = 0.9, s = TRUE)}))
 # In 1) one subsample for all signs is drawn, whereas in 2)
 # a different sample for each sign is drawn.
 
-### ----<< Example 3 >>---- : Oja median
+### ----<< Example 2 >>---- : Oja median
 # The Oja sign of the Oja median is zero:
 ojaSign(X, x = om, alg = "exact") 
 # The default location function 'ojaMedian()' 
@@ -156,7 +149,7 @@ ojaSign(X, x = ojaMedian(X))
 
 
 
-### ----<< Example 4 >>---- : 400 points in R^6
+### ----<< Example 3 >>---- : 400 points in R^6
 # Subsampling is done.
 # The following example might take a bit longer:
 \dontrun{

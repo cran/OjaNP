@@ -53,7 +53,9 @@ ojaMedianEx(X, control = ojaMedianControl(...), ...)
   \code{ojaMedianEvo} or \code{ojaMedianGrid}. Please use this only if you know what you are doing, because there are no checks, just the \code{.Call} to the algorithm itself.
   
   If the dimension of your data is too big or if there are too many observations, it is possible that the exact algorithm will crash R. On a common PC with a 32-bit operating system the following
-  combinations of dimension:amount will work fine: 2:1200, 3:300, 4:100, 5:63, 6:38, 7:24. Bigger datasets might be possible, depending on your system.
+  combinations of dimension:amount will work fine: 2:1200, 3:300, 4:100, 5:63, 6:38, 7:24. Bigger datasets might be possible, depending on your system. 
+  
+  Another general restriction with this function is that there should be more data points than dimensions.
   
   There is a demo available which demonstrates graphically the Oja median in simple data situations in the bivariate case. To view the demo run \code{demo(ojaMedianDemo)}.
 }
