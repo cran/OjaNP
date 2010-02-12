@@ -1,3 +1,6 @@
+#ifndef SUBSETGENERATOR_H
+#define SUBSETGENERATOR_H
+
 #pragma once
 
 #include "Matrix2D.h"
@@ -107,3 +110,6 @@ private:
 
   bool* contains;
 };
+
+#endif
+

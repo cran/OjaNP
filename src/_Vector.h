@@ -1,3 +1,6 @@
+#ifndef VECTOR_H
+#define VECTOR_H
+
 #pragma once
 
 #include <iostream>
@@ -71,3 +74,6 @@ private:
   /** values of vector **/
   double* values;
 };
+
+#endif
+

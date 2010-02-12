@@ -1,5 +1,0 @@
-LOG of the CHANGES in the package OjaNP
-
-Version 0.9:
-
-* first version released on CRAN 

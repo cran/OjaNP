@@ -149,7 +149,7 @@ double gamma_2(int n)
 
 		errif(prd < 0,"gamma_2: overflow");
 		
-		return double(prd)*sqrt(M_PI)/pow(2,n);
+		return double(prd)*sqrt(M_PI)/pow(2.0,n);
 	}
 	else
 	{

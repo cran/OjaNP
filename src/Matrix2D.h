@@ -1,3 +1,6 @@
+#ifndef MATRIX2D_H
+#define MATRIX2D_H
+
 #pragma once
 
 #include "_Vector.h"
@@ -110,3 +113,6 @@ private:
   /** values of the matrix **/
   double** values;
 };
+
+#endif
+
