@@ -381,13 +381,13 @@ int main(int argc, char **argv)
 
 
   //window stays open
-  cout << "Convergence reached after " << usedIter << " iterations \n";
+  //cout << "Convergence reached after " << usedIter << " iterations \n";
 
-  cout << "Best value = ";
+  //cout << "Best value = ";
   printf("%20f ",bestValue);;
-  cout << "Best mu = ";
+  //cout << "Best mu = ";
   bestMu.print();
-  cout << "Press any key to close program";
+  //cout << "Press any key to close program";
   getch();
 
 	return 0;

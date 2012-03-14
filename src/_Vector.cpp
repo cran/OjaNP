@@ -53,7 +53,7 @@ bool Vector::setValue(int i, double v)
 {
   if( i >= n)
   {
-    cout << "Vector::setValue - index too large!" << endl;
+    //cout << "Vector::setValue - index too large!" << endl;
     return false;
   }
 
@@ -66,7 +66,7 @@ bool Vector::setValues(Vector& v)
   int dim = (int)v.getSize();
   if(dim != n)
   {
-    cout << "Vector::setValues - sizes do not match!" << endl;
+    //cout << "Vector::setValues - sizes do not match!" << endl;
     return false;
   }
 
@@ -79,7 +79,7 @@ bool Vector::addValue(int i, double v)
 {
   if( i >= n)
   {
-    cout << "Vector::addValue - index too large!" << endl;
+    //cout << "Vector::addValue - index too large!" << endl;
     return false;
   }
 
@@ -91,7 +91,7 @@ double Vector::getValue(int i)
 {
   if(i >= n)
   {
-    cout << "Vector::getValue - index too large!" << endl;
+    //cout << "Vector::getValue - index too large!" << endl;
   }
 
   return values[i];
@@ -114,11 +114,11 @@ double Vector::getLength()
 
 void Vector::print()
 {
-  cout << "(";
-  for(int i = 0; i < n - 1; i++)
-    cout << values[i] << ", ";
+  //cout << "(";
+  //for(int i = 0; i < n - 1; i++)
+    //cout << values[i] << ", ";
   
-  cout << values[n-1] << ")";// << endl;
+ // cout << values[n-1] << ")";// << endl;
 }
 
 void Vector::normalize()

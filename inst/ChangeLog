@@ -1,9 +1,12 @@
 LOG of the CHANGES in the package OjaNP
 
+Version 0.9-5:
+
+* all references to standard c++ output and error handling removed
 
 Version 0.9-4:
 
-* adressing some compatility issues with sun compilers
+* addressing some compatibility issues with sun compilers
 * making the change log file also visible on the the CRAN pages
 * new function ojaCsampleTest
 

@@ -32,9 +32,13 @@
 #include "graphics.h"
 #endif
 
-#define LOG(a) {if(debug)cout << a << endl;}
-#define TRACE(a) {if(trace)cerr << a << endl;}
-#define LOGIF(a,b) {if(debug && (a))cout << b << endl;}
+//#define LOG(a) {if(debug)cout << a << endl;}
+//#define TRACE(a) {if(trace)cerr << a << endl;}
+//#define LOGIF(a,b) {if(debug && (a))cout << b << endl;}
+
+#define LOG(a) {}
+#define TRACE(a) {}
+#define LOGIF(a,b) {}
 
 using namespace std;
 
@@ -153,12 +157,12 @@ OjaPoint OjaData::medianEvalAllPoints()
 		I++;
     }
 	
-	if(verbose)
-		cout << "Evaluation done: " << size() << " data points and " << 
-			eval << "/" << total << " crossing points" << endl;
+	//if(verbose)
+	//	cout << "Evaluation done: " << size() << " data points and " << 
+	//		eval << "/" << total << " crossing points" << endl;
 
-    if(!quiet && !unique_median)
-		cout << "Median is not unique!" << endl;
+    //if(!quiet && !unique_median)
+	//	cout << "Median is not unique!" << endl;
 
 	OjaPoint p(this);
 	p.set_location(med);
@@ -267,8 +271,8 @@ OjaPoint OjaData::medianFollowIntersectionLines()
 {
 	int fail_count=0;
 
-	if(verbose)
-		cout << "Max. search lines " << max_searchlines << endl;
+	//if(verbose)
+	//	cout << "Max. search lines " << max_searchlines << endl;
 	
 	/* 1.*/
 	LOG("Generating hyperplanes");
@@ -394,11 +398,11 @@ OjaPoint OjaData::medianFollowIntersectionLines()
 	}
 
 	/* 25. */
-	if(verbose)
+	/*if(verbose)
 	{
 		cout << calL.size() << " lines minimized" << endl;
 		cout << fail_count << " failures" << endl;
-	}
+	}*/
 
 	return T;
 }
@@ -436,7 +440,7 @@ OjaPoint OjaData::medianLatticeApprox()
 	OjaPoint p(*this);
 	Lattice L(min(),max(),INITIAL_STEP);
 	Lattice *Lp=&L;
-
+/*
 	if(verbose)
 	{
 		cout << "Starting with " << L.points() << " points" << endl;
@@ -445,7 +449,7 @@ OjaPoint OjaData::medianLatticeApprox()
 		cout << "Maximum lattice size at the end is " << epsilon << endl;
 		cout << "Lattice measure " << (lattice_measure==1 ? "avg" : lattice_measure==2 ? "max" : "diam") << endl;
 	}
-	
+*/	
 	int sets=set_size; // Arvottavan setin koko
 	int set=1; // Arvottavan setin j�rjestysnumero
 	int n=0; // Hilaan lis�ttyjen hypertasojen m��r�
@@ -603,7 +607,7 @@ OjaPoint OjaData::medianLatticeApprox()
 
 	// Vastaus:
 	p.set_location((-1.0) * A.inv() * b);
-
+/*
 	if(verbose)
 	{
 		Point unfixed=(*Lp).point(bestI);
@@ -616,7 +620,7 @@ OjaPoint OjaData::medianLatticeApprox()
 		cout << "Unfixed result: " << unfixed << endl;
 		cout << "Improvement: " << ((unfixed  - exact_median).length()) - ((p.location() - exact_median).length()) << endl;
 	}
-	
+*/	
 	return p;
 }
 
@@ -636,7 +640,7 @@ OjaPoint OjaData::medianLatticeApprox2()
 	OjaPoint p(*this);
 	Lattice L(min(),max(),INITIAL_STEP);
 	Lattice *Lp=&L;
-
+/*
 	if(verbose)
 	{
 		cout << "Starting with " << L.points() << " points" << endl;
@@ -645,7 +649,7 @@ OjaPoint OjaData::medianLatticeApprox2()
 		cout << "Maximum lattice size at the end is " << epsilon << endl;
 		cout << "Lattice measure " << (lattice_measure==1 ? "avg" : lattice_measure==2 ? "max" : "diam") << endl;
 	}
-
+*/
 	int sets=set_size; // Arvottavan setin koko
 	int set=1; // Arvottavan setin j�rjestysnumero
 	int n=0; // Hilaan lis�ttyjen hypertasojen m��r�
@@ -783,7 +787,7 @@ OjaPoint OjaData::medianLatticeApprox2()
 	set_lattice(0);
 #endif
 	p.set_location(Lp->point(Lp->smallest_goodness()));
-	
+/*
 	if(verbose)
 	{
 		cout << "Total of " << total << " hyperplanes sampled" << endl;
@@ -791,6 +795,7 @@ OjaPoint OjaData::medianLatticeApprox2()
 		cout << "Sample ratio " << double(n)/total << endl;
 		cout << "Average size of lattice " << double(lattice_points)/lattice_number << endl;
 	}
+*/
 	return p;
 }
 
@@ -832,7 +837,8 @@ OjaPoint OjaData::medianLatticeApprox3(list<Hyperplane>* store,list<Index>* idxs
 	int restores=0; // Kuinka usein jouduttiin peruuttamaan.
 	int restored_planes=0; // Kuinka monta planea s�mpl�ttiin turhaan
 	int max_set_size=set_size*2; // Adaptiivisen moodin rajoitin, joka kasvaa hilakerroksittain
-	
+
+	/*
 	if(verbose)
 	{
 		cout << "One sample is " << set_size << " hyperplanes" << endl;
@@ -840,6 +846,7 @@ OjaPoint OjaData::medianLatticeApprox3(list<Hyperplane>* store,list<Index>* idxs
 		cout << "Maximum lattice size at the end is " << epsilon << endl;
 		cout << "Starting with " << L.points() << " points" << endl;
 	}
+	*/
 	
 	// Nollataan jokaisen solmun gradienttiestimaatti
 	for(LatticeIterator j(L); j; j++)
@@ -1039,7 +1046,7 @@ OjaPoint OjaData::medianLatticeApprox3(list<Hyperplane>* store,list<Index>* idxs
 	if(verbose)
 	{
 		Point unfixed=L.point(bestI);
-
+		/*
 		cout << "Total of " << n << " hyperplanes added to lattice" << endl;
 		cout << "Average size of lattice " << double(lattice_points)/(lattice_number+restores) << endl;
 		cout << restores << " times returned back to older lattice" << endl;
@@ -1050,6 +1057,7 @@ OjaPoint OjaData::medianLatticeApprox3(list<Hyperplane>* store,list<Index>* idxs
 		cout << "Unfixed result: " << unfixed << endl;
 		if(!exact_median.is_nil())
 			cout << "Improvement: " << ((unfixed  - exact_median).length()) - ((p.location() - exact_median).length()) << endl;
+		*/
 	}
 	
 	if(cov)
@@ -1222,15 +1230,15 @@ OjaPoint OjaData::medianBootstrap(matrix& covariance,int how_many)
 	list<Index> idxstore;
 	OjaPoint med,bootmed;
 
-	if(verbose)
-		cout << "ESTIMATING OJA MEDIAN:" << endl;
+	//if(verbose)
+	//	cout << "ESTIMATING OJA MEDIAN:" << endl;
 	
 	med=medianLatticeApprox3(&store,&idxstore,&Cov);
-	if(verbose)
-		cout << "Median " << med.location() << endl;
+	//if(verbose)
+	//	cout << "Median " << med.location() << endl;
 	
-	if(verbose)
-		cout << "ESTIMATING COVARIANCE:" << endl;
+	//if(verbose)
+	//	cout << "ESTIMATING COVARIANCE:" << endl;
 
 	Cov=Cov.inv();
 
@@ -1239,8 +1247,8 @@ OjaPoint OjaData::medianBootstrap(matrix& covariance,int how_many)
 	for(int i=0; i<how_many; i++)
 	{
 		bootmed=medianBootstrap(store,idxstore,Cov);
-		if(verbose)
-			cout << (i+1) << ". bootstrap " << bootmed.location() << endl;
+		//if(verbose)
+		//	cout << (i+1) << ". bootstrap " << bootmed.location() << endl;
 
 		ret+=::covariance(bootmed.location()-med.location(),bootmed.location()-med.location());
 	}
@@ -1291,14 +1299,14 @@ OjaPoint OjaData::medianSimplexApprox()
 	Point z,R; // Apumuuttujia
 	chi2_limit_check test_fail(chi2_limit); // Testioperaattori
 	Simplex Area(dim()); // d+1 parasta pistett�
-	
+/*	
 	if(verbose)
 	{
 		cout << "Sample set is " << set_size << " hyperplanes" << endl;
 		cout << "Limit is " << chi2_limit << endl;
 		cout << "Phase 2 limit is " << phase2 << endl;
 	}
-
+*/
   start_again:
 
 	n=0;
@@ -1364,7 +1372,7 @@ OjaPoint OjaData::medianSimplexApprox()
 	{
 		phase2+=dim();
 		
-		cerr << "warning: lost too many points, start again...(trying limit " << phase2 << ")" << endl;
+		//cerr << "warning: lost too many points, start again...(trying limit " << phase2 << ")" << endl;
 		goto start_again;
 	}
 
@@ -1440,8 +1448,8 @@ OjaPoint OjaData::medianSimplexApprox()
 
 	}while(ptsin > dim()+1);
 
-	if(verbose && !exact_median.is_nil())
-		cout << "Simplex contains median: " << Area.contains(exact_median) << endl;
+	//if(verbose && !exact_median.is_nil())
+	//	cout << "Simplex contains median: " << Area.contains(exact_median) << endl;
 	
 	// Lasketaan keskipiste.
  	LOG("Result contains " << dim()+1 << " of " << ok.size() << " points");
@@ -1460,14 +1468,14 @@ OjaPoint OjaData::medianSimplexApprox()
 
 	if(verbose)
 	{
-		cout << "Final simplex" << endl;
+		//cout << "Final simplex" << endl;
 		p=ok.begin();
 		for(int j=dim()+1; j; j--,p++)
-			if(trace)
-				cerr << "  " << (*this)[p->index] << endl;
-			else
-				cout << "  " << (*this)[p->index] << "  gradient: " << p->gradient << "  test value: " << p->goodness << endl;
-		
+// 			if(trace)
+// 				cerr << "  " << (*this)[p->index] << endl;
+// 			else
+// 				cout << "  " << (*this)[p->index] << "  gradient: " << p->gradient << "  test value: " << p->goodness << endl;
+// 		
 		// Etsit��n tarkkaa mediaania l�hin havainto.
 		if(!exact_median.is_nil())
 		{
@@ -1480,11 +1488,11 @@ OjaPoint OjaData::medianSimplexApprox()
 					bestidx=i;
 				}
 
-			cout << "Distance to nearest data " << dist << endl;
+		//	cout << "Distance to nearest data " << dist << endl;
 			p=ok.begin();
-			for(int j=dim()+1; j; j--,p++)
-				if(p->index == bestidx)
-					cout << "Nearest point belongs to simplex" << endl;
+		//	for(int j=dim()+1; j; j--,p++)
+		//		if(p->index == bestidx)
+		//			cout << "Nearest point belongs to simplex" << endl;
 		}
 	}
 		

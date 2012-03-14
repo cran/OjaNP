@@ -169,7 +169,6 @@ ostream& operator <<(ostream& os,const Point& p)
 {
     if(p.is_nil())
     {
-		cout << "nil";
 		return os;
     }
     

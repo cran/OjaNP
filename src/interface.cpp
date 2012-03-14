@@ -129,7 +129,7 @@ extern "C"
 		  }
 
 		  default:
-			  cerr << "oja: unsupported function " << *func << endl;
+			//  cerr << "oja: unsupported function " << *func << endl;
 			  return;
 		}
 

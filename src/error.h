@@ -5,16 +5,21 @@
 
 #include <iostream>
 #include <stdlib.h>
+#include <R.h>
 
-#define err(msg) {std::cerr << msg << std::endl; abort();}
-#define exitif(test,msg) if(test) {std::cerr << msg << std::endl; abort();}
+// Uncomment them, when R error messages are include and adjust them...
+//#define err(msg) {std::cerr << msg << std::endl; abort();}
+#define err(msg) {error(msg);}
+//#define exitif(test,msg) if(test) {std::cerr << msg << std::endl; abort();}
+#define exitif(test,msg) if(test) {error(msg);}
 
 using namespace std; //df
 
 #ifdef NO_DEBUG
-#  define errif(test,msg) {}
+#define errif(test,msg) {}
 #else
-#  define errif(test,msg) exitif(test,msg)
+//#define errif(test,msg) exitif(test,msg)
+#define errif(test,msg) {}
 #endif
 
 #endif 

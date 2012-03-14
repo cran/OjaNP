@@ -26,7 +26,7 @@
 #include <math.h>
 #include <valarray>
 
-using namespace std; //df
+using namespace std;
 
 
 //  CLASS: Hyperplane

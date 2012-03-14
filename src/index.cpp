@@ -1181,14 +1181,14 @@ void IndexIdentifier::show_format()
 {
 	if(parts==0)
 	{
-		cout << '0';
+		//cout << '0';
 		return;
 	}
 
 	for(int i=0; i<parts; i++)
 	{
-		if(i) cout << '+';
-		cout << part[i].dim();
+		//if(i) cout << '+';
+		//cout << part[i].dim();
 	}
 }
 

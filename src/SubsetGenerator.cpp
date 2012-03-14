@@ -122,11 +122,6 @@ void AllSubsets::reset()
 
 bool* AllSubsets::getNextSubset(Matrix2D* m, Matrix2D& points)
 {
-  if(finished)
-  {
-    cout << "No new subset available. Returning last one. Reset generator or change input." << endl;
-  }
-
   while(true)
   {
     switch (state)
@@ -259,10 +254,6 @@ bool* AllSubsets::getNextSubset(Matrix2D* m, Matrix2D& points)
 
 bool* AllSubsets::getNextSubset(Matrix2D* m, Matrix2D* m2, Matrix2D& points)
 {
-  if(finished)
-  {
-    cout << "No new subset available. Returning last one. Reset generator or change input." << endl;
-  }
 
   while(true)
   {

@@ -11,8 +11,8 @@ The package provides functions for the Oja median, Oja signs and ranks and metho
 \tabular{ll}{
 Package: \tab OjaNP\cr
 Type: \tab Package\cr
-Version: \tab 0.9-4\cr
-Date: \tab 2010-02-12\cr
+Version: \tab 0.9-5\cr
+Date: \tab 2012-03-14\cr
 License: \tab GPL (>= 2)\cr
 LazyLoad: \tab yes\cr
 }

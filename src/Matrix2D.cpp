@@ -85,7 +85,7 @@ bool Matrix2D::setRow(int i, Vector& v)
 {
   if(v.getSize()!= n)
   {
-    cout << "Matrix2D::setRow - sizes do not match!" << endl;
+    //cout << "Matrix2D::setRow - sizes do not match!" << endl;
     return false;
   }
   
@@ -99,7 +99,7 @@ bool Matrix2D::setColumn(int j, Vector& v)
 {
   if(v.getSize() != m)
   {
-    cout << "Matrix2D::setColumn - sizes do not match!" << endl;
+    //cout << "Matrix2D::setColumn - sizes do not match!" << endl;
     return false;
   }
   
@@ -138,7 +138,7 @@ bool Matrix2D::setValue(int i, int j, double v)
 {
   if((i >= m) || (j >= n))
   {
-    cout << "Matrix2D::setValue - index too large!" << endl;
+    //cout << "Matrix2D::setValue - index too large!" << endl;
     return false;
   }
 
@@ -151,7 +151,7 @@ Vector Matrix2D::getRow(int i)
 {
   if(i >= m)
   {
-    cout << "Matrix2D::Row - index too large!" << endl;
+    //cout << "Matrix2D::Row - index too large!" << endl;
   }
 
   Vector v(n);
@@ -164,7 +164,7 @@ Vector * Matrix2D::getColumn(int j)
 {
   if(j >= n)
   {
-    cout << "Matrix2D::Column - index too large!" << endl;
+    //cout << "Matrix2D::Column - index too large!" << endl;
   }
 
   Vector *v=new Vector(m);
@@ -177,7 +177,7 @@ double Matrix2D::getValue(int i, int j)
 {
   if((i >= m) || (j >= n))
   {
-    cout << "Matrix2D::Value - index too large!" << endl;
+    //cout << "Matrix2D::Value - index too large!" << endl;
   }
 
   return values[i][j];
@@ -185,15 +185,15 @@ double Matrix2D::getValue(int i, int j)
 
 void Matrix2D::print() const
 {
-  cout << "m = (" << endl;
-  for(int i = 0; i < m; i++)
-  {
-    cout << "  ";
-    for(int j  = 0; j < n-1; j++)
-      cout << values[i][j] << ", ";
-    cout << values[i][n-1] << endl;
-  }
-  cout << ")" << endl;
+  //cout << "m = (" << endl;
+  //for(int i = 0; i < m; i++)
+  //{
+    //cout << "  ";
+    //for(int j  = 0; j < n-1; j++)
+    //  cout << values[i][j] << ", ";
+    //cout << values[i][n-1] << endl;
+  //}
+  //cout << ")" << endl;
 }
 
 Matrix2D & Matrix2D::transpose() const 
@@ -222,7 +222,7 @@ Matrix2D & Matrix2D::balance() const
 {
 	if(this->n != this->m)
   	{
-    cout << "Matrix2D::determinant - not a quadratic matrix!" << endl;
+    //cout << "Matrix2D::determinant - not a quadratic matrix!" << endl;
     }
     Matrix2D D(this->n,this->n);
     for (int i = 0; i < this->n; i++)
@@ -351,12 +351,12 @@ double Matrix2D::determinant(int* validRows, int reducedM, int reducedN)
   double det = 0;
   if(reducedN != reducedM)
   {
-    cout << "Matrix2D::determinant - not a quadratic matrix!" << endl;
+    //cout << "Matrix2D::determinant - not a quadratic matrix!" << endl;
     return det;
   }
   if(reducedN < 1)
   {
-    cout << "Matrix2D::determinant - empty matrix!" << endl;
+    //cout << "Matrix2D::determinant - empty matrix!" << endl;
     return det;
   }
   if(reducedN == 1)
@@ -402,10 +402,12 @@ double Matrix2D::determinant(int* validRows, int reducedM, int reducedN)
 
 Matrix2D & Matrix2D::mult(const Matrix2D & other_mat) const
 {
+        /*
 	if (this->n != other_mat.m) 
 	{
 		cout << "Matrix2D::mult - the Matrices cannot be multiplied because the row number and the column number does not match" << endl;
 	}
+	*/
 	Matrix2D *res = new Matrix2D();
 	res->m = this->m;
 	res->n = other_mat.n;
@@ -434,7 +436,7 @@ void Matrix2D::loadIdentity()
 {
 	if (this->m != this->n)
 	{
-		cout << " Cannot load identity - matrix must be square " << endl;
+		//cout << " Cannot load identity - matrix must be square " << endl;
 		return;
 	}
 	for (int i = 0; i < this->n; i++)
@@ -454,7 +456,7 @@ double Matrix2D::determinant2(int * validRows,int reducedM, int reducedN)
 	// ValidRows[k]           // Zeilen Indices der reduzierten Matrix
 	if(reducedN != reducedM)
   	{
-    	cout << "Matrix2D::determinant - not a quadratic matrix!" << endl;
+    	//cout << "Matrix2D::determinant - not a quadratic matrix!" << endl;
     	return 0;
   	}
 	//DETERMINANT_FAILURE = 0.01;
