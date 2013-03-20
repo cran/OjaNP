@@ -18,10 +18,11 @@
  *  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-#include "error.h"
-#include "misc.h"
 #include <limits.h>
 #include <fstream>
+#include "error.h"
+#include "misc.h"
+
 
 using namespace std;
 

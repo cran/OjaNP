@@ -1,12 +1,15 @@
 LOG of the CHANGES in the package OjaNP
 
+Version 0.9-6:
+* #define R_NO_REMAP added to data.h in order to fix some error handling on MacOS
+
 Version 0.9-5:
 
 * all references to standard c++ output and error handling removed
 
 Version 0.9-4:
 
-* addressing some compatibility issues with sun compilers
+* adressing some compatility issues with sun compilers
 * making the change log file also visible on the the CRAN pages
 * new function ojaCsampleTest
 

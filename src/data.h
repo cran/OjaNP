@@ -1,5 +1,7 @@
 /* $Id: data.h,v 1.1 2008/01/25 11:47:49 ruthe Exp $ */
 
+#define R_NO_REMAP
+
 #ifndef DATA_H
 #define DATA_H
 #include "point.h"

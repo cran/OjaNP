@@ -1,4 +1,4 @@
-fbae2f953d9fdc9bf7e50e185026db6e *DESCRIPTION
+a444ed65a3b3ef34a26c5e77026c63ed *DESCRIPTION
 4133b6b3ae00da6e3249de0786dbc698 *NAMESPACE
 37c4bd562afc8d4090917b521b82ae5b *R/OjaCsampleTestInternal.R
 11e06d65267d2daac9a10890ae5f1a47 *R/OjaMedian.R
@@ -30,11 +30,11 @@ e8e0dc68830ccba93decaa548d93789b *R/ojaMedian.control.R
 bf1e2f2bb3da22b0d4b7f880c4f4aa08 *R/ojaSignedRank.R
 e426bcf154e23b0090faab309a93ed23 *R/ojaSignedRank2.R
 fa4767b52273484d7bfb687325e1ccf5 *R/subSampleMessage.R
-e86dd0025ad5ba9856ed3c5f8352a8c0 *data/biochem.rda
+d4beadf954f82459c120984fd84de25c *data/biochem.rda
 1a0b477585e68e88bd9f9f3bfcb6e3dd *demo/00Index
 11ff0728b9d1236a40a063adddcdec6d *demo/ojaMedianDemo.R
-db44bc1b0c4c63b7897ec9bc59633e61 *inst/ChangeLog
-bdc329759d5fd4d266a3458a9d1fc4d3 *man/OjaNP-package.Rd
+3e581a985741087c276f11e4eff47d6f *inst/ChangeLog
+3e305f7e750118e24829dca6c9276f8a *man/OjaNP-package.Rd
 9704539ce233b5cabc244d419f7742c1 *man/biochem.Rd
 bf8e9db097e5ee8e1045e7daa5d13b9d *man/hyperplane.Rd
 47c8e48fa2eaebdb680a454af86293fe *man/oja1sampleTest.Rd
@@ -58,7 +58,7 @@ cdc562ead9af39b385e258bb128cc6fa *src/SubsetGenerator.cpp
 98154ccf06d4b6b35fa4adb5e7768261 *src/_Vector.h
 a1c71e2dfdd5f99d69bd1d421ae8cd74 *src/algorithms.cpp
 35a889116b2d18653ef5d1411b1cad81 *src/data.cpp
-fed9d1a86054e63510905d69ff6cf7c5 *src/data.h
+73e1c6cdccc58017724943fbf0898a60 *src/data.h
 79d9487078629692fc73e4adf96210e7 *src/det.c
 38644401a745d12c90a292a2f0828a93 *src/error.h
 7851cebd01fa925811b46483da58444e *src/global.cpp
@@ -76,7 +76,7 @@ e113e545c7e1dd65e2f0aaf2bc728129 *src/line.cpp
 751c031db0730ab889ca9add98ae7c2f *src/matrix.h
 b395b77da3ada02781e9302d40231acd *src/matrix_wrapper.cpp
 4ecd428d91e7b6f191bd98b9aa0b8581 *src/matrix_wrapper.h
-60ad0645afc9ea064ce3956277f1a849 *src/misc.cpp
+5f0ceaa34dab2ee1f13c3da8cc3becdd *src/misc.cpp
 e1bb434ebf21b0eaf0a4e1c6144a0a52 *src/misc.h
 66ecaed2631b0f18accfb52d39b3aca0 *src/oja_data.cpp
 5b252297bcee0817e8bca00fafe7ddc4 *src/oja_geometry.cpp
