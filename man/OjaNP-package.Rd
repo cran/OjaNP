@@ -11,8 +11,8 @@ The package provides functions for the Oja median, Oja signs and ranks and metho
 \tabular{ll}{
 Package: \tab OjaNP\cr
 Type: \tab Package\cr
-Version: \tab 0.9-6\cr
-Date: \tab 2013-03-20\cr
+Version: \tab 0.9-7\cr
+Date: \tab 2014-05-30\cr
 License: \tab GPL (>= 2)\cr
 LazyLoad: \tab yes\cr
 }
@@ -21,7 +21,7 @@ The package implements several algorithms to compute the Oja median as well as t
 \author{
 Daniel Fischer, Jyrki \enc{Möttönen}{Mottonen}, Klaus Nordhausen, Daniel Vogel.
 
-Maintainer: Klaus Nordhausen <klaus.nordhausen@uta.fi>
+Maintainer: Klaus Nordhausen <klaus.nordhausen@utu.fi>
 
 }
 

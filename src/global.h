@@ -3,7 +3,7 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
-using namespace std; //df
+//using namespace std; //df
 
 extern bool debug;
 extern bool trace;

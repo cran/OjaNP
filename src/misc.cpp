@@ -31,15 +31,15 @@ using namespace std;
 
 int fact(int k)
 {
-    static int factorials_max = 32;
+   // static int factorials_max = 32;
     static int factorial[32];
-	static int next_factorial=0;
+    static int next_factorial=0;
 	
     errif(k < 0,"fact: illegal parameter " << k);
-    errif(k >= factorials_max,"fact: overflow");
+  //  errif(k >= factorials_max,"fact: overflow");
 	
     if(k < next_factorial)
-		return factorial[k];
+		return factorial[0];  //Here was factorial[k];
 
     for(int i=next_factorial; i<=k; i++)
     {

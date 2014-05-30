@@ -168,7 +168,7 @@ OjaPoint OjaData::medianEvalAllPoints()
 	p.set_location(med);
 
     return p;
-};
+}
 
 // ALGORITMI: Davidon-Fletcher-Powell, Kaisa Miettinen: "Optimointi", s.40
 // BUG: Rankka kludge indeksien kanssa (huono luokkajako toimintojen osalta)
@@ -1480,12 +1480,12 @@ OjaPoint OjaData::medianSimplexApprox()
 		if(!exact_median.is_nil())
 		{
 			double dist=0.0;
-			int bestidx=0;
+			//int bestidx=0;
 			for(int i=0; i<size(); i++)
 				if(i==0 || exact_median.dist((*this)[i]) < dist)
 				{
 					dist=exact_median.dist((*this)[i]);
-					bestidx=i;
+					//bestidx=i;
 				}
 
 		//	cout << "Distance to nearest data " << dist << endl;

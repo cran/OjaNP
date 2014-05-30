@@ -47,6 +47,7 @@ public:
 template <class T> class SumPipe:public TemplatePipeElement<T>
 {
 	T sum;
+	using PipeElement::reset;	// Without this the clang throws a warning
 public:
 	void compute(T &a)	{	sum+=a;	};
 	void reset(T a)	{  sum=a; };
@@ -182,7 +183,8 @@ public:
 	};
 	void compute(Matrix2D* m2,Matrix2D* mReduced)
 	{
-		FILE * debugDatei;  /*
+//		FILE * debugDatei;  
+	       /*
 		Die Determinanten werden zu test zwecken in eine Datei geschrieben 
 		um sie dann anschlie�end in maple zu vergleichen
 			*/
@@ -237,7 +239,7 @@ public:
 	};
 	void reCompute(void)
 	{
-		for(int i=0;i<tab.size();i++)
+		for(unsigned int i=0;i<tab.size();i++)
   		   ((doubleVecPipeElement*)next)->compute(tab[i], anzahl[i]);
 	};
 };
@@ -283,11 +285,10 @@ class ComputeObjectiveFunction
 {
 	Vector mu;
 	Matrix2D* points;
-	
 	SubsetPipe subset;
+	DetPipe det;	
 	SubDetPipe subDet;
 	RepeaterPipe repeat;
-	DetPipe det;
 	AbsoluteValuePipe<double> absV;
 	SumPipe<double> sum;
 
@@ -347,11 +348,11 @@ class ComputeNabla
 {
 	Vector mu;
 	Matrix2D* points;
-	
 	SubsetPipe subset;
+	GradientPipe nabla;
 	SubDetPipe subDet;
 	RepeaterPipe repeat;
-	GradientPipe nabla;
+
 	SumPipe<Vector> sum;
 
 	bool firstRun;

@@ -453,7 +453,7 @@ bool* RandomSubsets::getNextSubset(Matrix2D* m, Matrix2D& points)
 
 	}
 	return contains; //???
-};
+}
 
 bool* RandomSubsets::getNextSubset(Matrix2D* m, Matrix2D* m2, Matrix2D& points)
 {
@@ -475,7 +475,7 @@ bool* RandomSubsets::getNextSubset(Matrix2D* m, Matrix2D* m2, Matrix2D& points)
 		}
 	}
 	return contains; //???
-};
+}
 
 void RandomSubsets::getRandomSubset(bool* subset)
 {

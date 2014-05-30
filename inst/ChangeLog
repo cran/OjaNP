@@ -1,5 +1,9 @@
 LOG of the CHANGES in the package OjaNP
 
+Version 0.9-7:
+* Fixed several C++ warnings
+* changed maintainer email
+
 Version 0.9-6:
 * #define R_NO_REMAP added to data.h in order to fix some error handling on MacOS
 

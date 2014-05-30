@@ -21,7 +21,7 @@
 #include <stdlib.h>
 #include "global.h"
 
-using namespace std; //df
+//using namespace std; //df
 
 /* Ei geneerinen osa parseria */
 bool debug=false;

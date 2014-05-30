@@ -304,7 +304,7 @@ int calc_ojaMedian(Matrix2D & points,
 
 
     /** evaluate objective function **/
-    double f,f2;
+    double f;
 	
   
 	f = objFunc.compute(&mu);
@@ -443,7 +443,7 @@ extern "C" {
 
 		
     GetRNGstate();
-	  	SEXP names,className,dataClass,column,solution,readData;
+	  	SEXP names,className,dataClass,column,solution;
 	  	
 	  	//PROTECT(column);    //warning R
         PROTECT(column=allocVector(REALSXP,DIM));	  

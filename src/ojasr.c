@@ -7,7 +7,7 @@
 /******************************************************************/
 void ojacrnk(double *x, int *nrow, int *ncol, double *rn)     
 {  
-  int i,j,m,n,k,nk,kk,cnt=0,lc,h,*p,*a;
+  int i,j,m,n,k,nk,cnt=0,lc,h,*p,*a;
   extern double det();  
   double sp2,sp(),da,*dp2,*obsvec;
   void dp(), nextp();
@@ -15,7 +15,7 @@ void ojacrnk(double *x, int *nrow, int *ncol, double *rn)
   n=*nrow;
   k=*ncol;
   nk=(*nrow)*(*ncol);
-  kk=(*ncol)*(*ncol);
+  //kk=(*ncol)*(*ncol);
 
   p = (int*) Calloc(k,int); 
   if (p == NULL) error("memory allocation failed");
@@ -60,7 +60,7 @@ void ojacrnk(double *x, int *nrow, int *ncol, double *rn)
 /******************************************************************/
 void ojasrnk(double *x, int *nrow, int *ncol, double *rn)     
 {  
-  int i,j,m,n,k,nk,kk,*p,cnt=0,lc,*a,h,na,hh;   
+  int i,j,m,n,k,nk,*p,cnt=0,lc,*a,h,na,hh;   
   extern double det();  
   double sp2,sp(),*dp2,*obsvec,da;
   void dp(), nextp();
@@ -68,7 +68,7 @@ void ojasrnk(double *x, int *nrow, int *ncol, double *rn)
   n=*nrow;
   k=*ncol;
   nk=(*nrow)*(*ncol);
-  kk=(*ncol)*(*ncol);
+  //kk=(*ncol)*(*ncol);
 
   p = (int*) Calloc(k,int);
   if (p == NULL) error("memory allocation failed");
@@ -128,7 +128,7 @@ void ojasrnk(double *x, int *nrow, int *ncol, double *rn)
 /******************************************************************/
 void ojasrnk2(double *x, int *nrow, int *ncol, double *rn)     
 {  
-  int i,j,m,n,k,nk,kk,*p,cnt=0,lc,*a,h;   
+  int i,j,m,n,k,nk,*p,cnt=0,lc,*a,h;   
   extern double det();  
   double sp2,sp(),*dp2,*obsvec,*x2,da;
   void dp(), nextp();
@@ -136,7 +136,7 @@ void ojasrnk2(double *x, int *nrow, int *ncol, double *rn)
   n=*nrow;
   k=*ncol;
   nk=(*nrow)*(*ncol);
-  kk=(*ncol)*(*ncol);
+  //kk=(*ncol)*(*ncol);
 
   x2      = (double*)Calloc((2*n)*k,double);
   if (x2 == NULL) error("memory allocation failed");
@@ -195,7 +195,7 @@ void ojasrnk2(double *x, int *nrow, int *ncol, double *rn)
 /******************************************************************/
 void ojasn(double *a, int *nrow, int *ncol, double *sn)     
 {  
-  int i,j,m,n,k,nk,kk,*q,cnt=0,lc;   
+  int i,j,m,n,k,nk,*q,cnt=0,lc;   
   extern double det();  
   double sq2,sq(),*eq2,*obsvec,da;
   void eq(), nextp();
@@ -203,7 +203,7 @@ void ojasn(double *a, int *nrow, int *ncol, double *sn)
   n=*nrow;
   k=*ncol;
   nk=(*nrow)*(*ncol);
-  kk=(*ncol)*(*ncol);
+  //kk=(*ncol)*(*ncol);
 
   q       = (int*)Calloc(k,int);
   if (q == NULL) error("memory allocation failed");
