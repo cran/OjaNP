@@ -41,7 +41,7 @@ Hyperplane::Hyperplane()
 Hyperplane::~Hyperplane()
 {
     if(cof)
-		delete cof;
+		delete[] cof;
 }
 
 Hyperplane::Hyperplane(int dim)
@@ -74,7 +74,7 @@ void Hyperplane::set_dim(int n)
     if(cofs != n+1)
 	{
 		if(cof)
-			delete cof;
+			delete[] cof;
 		cofs = n+1;
 		cof = new double[cofs];
 		errif(!cof,"Hyperplane::set_dim: out of memory");

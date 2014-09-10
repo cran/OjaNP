@@ -1,5 +1,8 @@
 LOG of the CHANGES in the package OjaNP
 
+Version 0.9-8:
+* Fixed Valgrind warnings
+
 Version 0.9-7:
 * Fixed several C++ warnings
 * changed maintainer email

@@ -67,7 +67,7 @@ SimpleIndex& SimpleIndex::operator=(const SimpleIndex& i)
     min = i.min;
     max = i.max;
     if(digit)
-		delete digit;
+		delete[] digit;
     digit = new int[digits];
     
     errif(!digit,"SimpleIndex::operator=: out of memory");
@@ -94,7 +94,7 @@ void SimpleIndex::get_values(const SimpleIndex& I)
 SimpleIndex::~SimpleIndex()
 {
     if(digit)
-		delete digit;
+		delete[] digit;
 }
 
 SimpleIndex& SimpleIndex::operator++(int)
@@ -280,7 +280,7 @@ Index& Index::operator=(const Index& i)
     digits = i.digits;
     max = i.max;
     if(digit)
-		delete digit;
+		delete[] digit;
     digit = new int[digits];
     
     errif(!digit,"Index::operator=: out of memory");
@@ -293,7 +293,7 @@ Index& Index::operator=(const Index& i)
 Index::~Index()
 {
     if(digit)
-		delete digit;
+		delete[] digit;
 }
 
 bool Index::inc_digit(int i)

@@ -1,4 +1,4 @@
-8aea991dc5c3a9089664ebd555801b13 *DESCRIPTION
+54fe00a1cc2975e22665b4235d1b04fa *DESCRIPTION
 4133b6b3ae00da6e3249de0786dbc698 *NAMESPACE
 37c4bd562afc8d4090917b521b82ae5b *R/OjaCsampleTestInternal.R
 11e06d65267d2daac9a10890ae5f1a47 *R/OjaMedian.R
@@ -33,8 +33,8 @@ fa4767b52273484d7bfb687325e1ccf5 *R/subSampleMessage.R
 076d260e41cfd562b9e68633c66f16f1 *data/biochem.rda
 1a0b477585e68e88bd9f9f3bfcb6e3dd *demo/00Index
 11ff0728b9d1236a40a063adddcdec6d *demo/ojaMedianDemo.R
-53dc451902152c0db9675cf982db2dba *inst/ChangeLog
-67e5a188a038ac9e6d85fdec9333665c *man/OjaNP-package.Rd
+c18780164d1a7afc4a4e93986c336c9f *inst/ChangeLog
+f928096aeb51126a274ec8a2b0d632ea *man/OjaNP-package.Rd
 9704539ce233b5cabc244d419f7742c1 *man/biochem.Rd
 bf8e9db097e5ee8e1045e7daa5d13b9d *man/hyperplane.Rd
 47c8e48fa2eaebdb680a454af86293fe *man/oja1sampleTest.Rd
@@ -64,9 +64,9 @@ fdc2d2b7a612fb473da8d6d42482f79c *src/algorithms.cpp
 364490ec3ec705450bd593e176c7296d *src/global.cpp
 c12334eeae193763af8636a18b3c9e1c *src/global.h
 c91f028bd528304c223cf9136e6c663f *src/graphics.h
-28a0863a4b0401afd37ae9eeafa6935c *src/hyperplane.cpp
+be5409cb9ca98ba00053a31d1154927a *src/hyperplane.cpp
 b26ca3422a62eb9b6f489a1378f11b94 *src/hyperplane.h
-5bb5605b867a2b0893da83a5403ba742 *src/index.cpp
+c1e2d91bf6fe69285a5c638872646334 *src/index.cpp
 bab65e86bb30b7e92b22d642db064aa6 *src/index.h
 1dfb0154a444f8bd297ac1063718c6e2 *src/interface.cpp
 c910f1bb8d3c0bc4c348566796eb2e1e *src/lattice.cpp
