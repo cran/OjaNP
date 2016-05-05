@@ -19,6 +19,7 @@
  */
 
 #include <R.h>
+#include "interface.h"
 #include "oja_geometry.h"
 #include "matrix_wrapper.h"
 #include "global.h"
@@ -54,8 +55,8 @@ extern "C"
 	//XXXvoid r_oja(long* rows,long* cols,double* data,double* vec_out,double* mat_out,long* func,double* param1, double* param2, long* param3, long* param4,long* dbg, long* rSeed)
 	void r_oja(long* rows,long* cols,double* data,double* vec_out,double* mat_out,long* func,double* param1, double* param2, long* param3, long* param4,long* dbg)
 	{
-		int dim=int(*cols);
-		int size=int(*rows);
+		int dim=(int)*cols;
+		int size=(int)*rows;
 		double* d=data;
 		OjaPoint v_output;
 
@@ -67,18 +68,30 @@ extern "C"
 			for(int j=0; j<size; j++)
 				D[j][i]=*d++;
 
-		debug=(*dbg != 0);
+		debug=(int)(*dbg != 0);
 		verbose=(*dbg != 0);
 		
 		set_random_seed();
 		
-		switch(*func)
+		switch((int)*func)
 		{
 		  case 1:
 		  {
 			  D.set_median_method(FOLLOW_INTERSECTION_LINES);
 			  D.set_max_searchlines(int(*param1));
 			  v_output=D.median();
+			  break;
+		  }
+
+		  case 6:		//AP method
+		  {
+			  if (bool(*param3))
+				D.set_median_method(FOLLOW_INTERSECTION_LINES_BOUNDED);
+			  else
+				D.set_median_method(FOLLOW_INTERSECTION_LINES_BOUNDED_APPROX);
+			  D.set_max_searchlines(int(*param1));
+			  D.set_volume(double(*param2));
+			  v_output = D.median();
 			  break;
 		  }
 			  

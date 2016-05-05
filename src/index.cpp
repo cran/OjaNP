@@ -19,6 +19,7 @@
  */
 #include <limits.h>
 #include <algorithm>
+#include <iterator>
 #include "random.h"
 #include "error.h"
 #include "misc.h"
@@ -95,6 +96,7 @@ SimpleIndex::~SimpleIndex()
 {
     if(digit)
 		delete[] digit;
+	digit = 0;
 }
 
 SimpleIndex& SimpleIndex::operator++(int)
@@ -253,7 +255,20 @@ Index::Index()
     digit = 0;
 }
 
-void Index::initialize(int dim,int max_value)
+Index::Index(int dim, int max_value, set<int> digits)
+{
+	initialize(dim, max_value);
+
+	errif(digits.size() != dim, "Index::Index: dim of digits differs ");
+
+	int i = 0;
+	for (set<int>::iterator si = digits.begin(); si != digits.end(); si++)
+	{
+		digit[i++] = *si;
+	}
+}
+
+void Index::initialize(int dim, int max_value)
 {
     errif(dim < 1,"Index::Index: non-positive dimension " << dim);
     errif(max_value < 1,"Index::Index: non-positive max_value " << max_value);
@@ -294,6 +309,7 @@ Index::~Index()
 {
     if(digit)
 		delete[] digit;
+	digit = 0;
 }
 
 bool Index::inc_digit(int i)
@@ -603,6 +619,16 @@ void IndexSet::initialize(int num_of_idxs,int dim,int max_value)
     }
 }
 
+IndexSet::IndexSet(int dim, int max_value, const vector<set<int> >& indexes)
+{
+	initialize(indexes.size(), dim, max_value);
+
+	for (int i = 0; i < indexes.size(); i++)
+	{
+		digit[i] = Index(indexes[i].size(), max_value, indexes[i]);
+	}
+}
+
 IndexSet::IndexSet(const IndexSet& i)
 {
     digit = 0;
@@ -638,6 +664,7 @@ IndexSet::~IndexSet()
     {
 		delete[] max;
 		delete[] digit;
+		digit = 0;
     }
 }
 
@@ -687,6 +714,15 @@ int IndexSet::has(int value) const
 		sum+=digit[i].has(value);
     
     return sum;
+}
+
+int IndexSet::has(Index value) const
+{
+	errif(!digit, "IndexSet::has: no indices");
+	for (int i = 0; i < digits; i++)
+	if (digit[i] == value)
+		return true;
+	return false;
 }
 
 int IndexSet::combinations() const
@@ -1369,6 +1405,13 @@ vector<int> IndexIdentifier::partitions() const
 	return ret;
 }
 
+int IndexIdentifier::is_single_point() const
+{
+	if (parts != 1 || part->dim() != 1) 
+		return -1;
+	return part[0][0];
+}
+
 int IndexIdentifier::sup_objects() const
 {
 	list<vector<int> > split;
@@ -1406,6 +1449,15 @@ int IndexIdentifier::sup_objects() const
 	}
 
 	return total;
+}
+
+int IndexIdentifier::real_partitions(int omax) const
+{
+	int count = 0;
+	for (int i = 0; i < parts; i++)
+	if (part[i][0] < omax)
+		count++;
+	return count;
 }
 
 // class JokerIdentifier
@@ -1470,9 +1522,10 @@ void JokerIdentifier::put_sup_identifiers(set<JokerIdentifier>& L,int d) const
 
 	Index K(dimension-d,parts);
 	
+	JokerIdentifier J(*this);
+	
 	while(K)
 	{
-		JokerIdentifier J(*this);
 		J.clear();
 
 		for(int i=0; i<K.dim(); i++)

@@ -11,17 +11,17 @@ The package provides functions for the Oja median, Oja signs and ranks and metho
 \tabular{ll}{
 Package: \tab OjaNP\cr
 Type: \tab Package\cr
-Version: \tab 0.9-8\cr
-Date: \tab 2014-09-10\cr
+Version: \tab 0.9-9\cr
+Date: \tab 2016-04-24\cr
 License: \tab GPL (>= 2)\cr
 LazyLoad: \tab yes\cr
 }
 The package implements several algorithms to compute the Oja median as well as the Oja signs and ranks and methods based upon them.
 }
 \author{
-Daniel Fischer, Jyrki \enc{Möttönen}{Mottonen}, Klaus Nordhausen, Daniel Vogel.
+Daniel Fischer, Karl Mosler, Jyrki \enc{MÃ¶ttÃ¶nen}{Mottonen}, Klaus Nordhausen, Oleksii Pokotylo,  Daniel Vogel.
 
-Maintainer: Klaus Nordhausen <klaus.nordhausen@utu.fi>
+Maintainer: Daniel Fischer <daniel.fischer@luke.fi>
 
 }
 
