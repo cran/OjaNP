@@ -1,5 +1,5 @@
-0142cd584bd821e6ad3017cdc16d5b63 *DESCRIPTION
-d63de7cdf4e6a0d0b11e28723a92de6b *NAMESPACE
+2c5ed2d8c3e9ec86c80e675f03a58658 *DESCRIPTION
+ac079ea413ae0033126fef73007d00be *NAMESPACE
 37c4bd562afc8d4090917b521b82ae5b *R/OjaCsampleTestInternal.R
 69fcfc8d0840294487c1fe0f97d86c43 *R/OjaMedian.R
 dbb53c55aecdf15ebb9eacdc344fee4e *R/OjaMedianEvo.R
@@ -34,8 +34,8 @@ fa4767b52273484d7bfb687325e1ccf5 *R/subSampleMessage.R
 076d260e41cfd562b9e68633c66f16f1 *data/biochem.rda
 1a0b477585e68e88bd9f9f3bfcb6e3dd *demo/00Index
 11ff0728b9d1236a40a063adddcdec6d *demo/ojaMedianDemo.R
-309fe74f0fc77938fd976b03b99fd2af *inst/ChangeLog
-7a4758d96e653843157029cc76399033 *man/OjaNP-package.Rd
+9b7a9cbcff45dfb1f6db0753fa64afc4 *inst/ChangeLog
+103322c6548b5bd2afc13abc039c12fd *man/OjaNP-package.Rd
 6bc3a547d153f11beadbccb02beb9607 *man/biochem.Rd
 da2375f0bf5c7a1bd536449540864c1d *man/hyperplane.Rd
 b372f5b2e43d951e3c93eb3b8ff583a4 *man/oja1sampleTest.Rd
@@ -44,7 +44,7 @@ bf3f6d84fd333a2c8f01ae30850bed95 *man/ojaCsampleTest.Rd
 dc1c7a5421ae653a21b9a4eec43c3a60 *man/ojaMedianControl.Rd
 95c89ceccb252ee9729d6a8640b301ec *man/ojaMedianFn.Rd
 2afbdeacb3ebe0943b3e8ff4239858d7 *man/ojaRCM.Rd
-2c03c1713621cceefccb433b9f52768c *man/ojaRank.Rd
+bc69db912bdae0390dceb598dd2ae62c *man/ojaRank.Rd
 4f5fe145335eb49db6b57b58ffd9c42e *man/ojaSCM.Rd
 4880aa718bd1c3ec1d58d072abe6dd9f *man/ojaSign.Rd
 4972cee822dc40d732e5c433516cec38 *man/ojaSignedRank.Rd
@@ -52,7 +52,7 @@ ae7585741f34e2a7294843b24098326c *src/DebugTags.h
 9bc5aa7d4334d43640f515c9a1fd70bd *src/Makevars
 086579240b2ece318569f142250baff6 *src/Matrix2D.cpp
 817f4fbfd6abc2aa74a0c1cba0b1a7a4 *src/Matrix2D.h
-e18a6bd303c166838a211da3d2d412da *src/MersenneTwister.h
+d1d09181b3cd081285ca4605003c7cc5 *src/MersenneTwister.h
 2cd1e7bc5357a41c7d7d089af86d49dc *src/SubsetGenerator.cpp
 6007204967c1b8b1649eaee56f6b7795 *src/SubsetGenerator.h
 870b723251945c9ca7c22625202f5cad *src/_Vector.cpp
@@ -91,6 +91,7 @@ a3d7cf6f4a7142a10f000ed822d39aff *src/point.cpp
 c8ddeae99af2714953d969993567ae94 *src/point.h
 f2c794c9d9f0957e947abc9af5c42af3 *src/random.cpp
 637939adb6002b449d9290acc0eee521 *src/random.h
+7c22b1b500cab25872924e218f1645f5 *src/registerDynamicSymbol.c
 d9686cc7ca9ca7dc658e76a3ed1fcff1 *src/simplex.cpp
 103314bdcb7250e0e693378f907a4c60 *src/simplex.h
 24d70c163474be4cdc9f96add6fe23ff *src/stdafx.cpp
