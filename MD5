@@ -1,4 +1,4 @@
-2c5ed2d8c3e9ec86c80e675f03a58658 *DESCRIPTION
+08e81a6881bd40d43edc6345eefec149 *DESCRIPTION
 ac079ea413ae0033126fef73007d00be *NAMESPACE
 37c4bd562afc8d4090917b521b82ae5b *R/OjaCsampleTestInternal.R
 69fcfc8d0840294487c1fe0f97d86c43 *R/OjaMedian.R
@@ -35,7 +35,7 @@ fa4767b52273484d7bfb687325e1ccf5 *R/subSampleMessage.R
 1a0b477585e68e88bd9f9f3bfcb6e3dd *demo/00Index
 11ff0728b9d1236a40a063adddcdec6d *demo/ojaMedianDemo.R
 9b7a9cbcff45dfb1f6db0753fa64afc4 *inst/ChangeLog
-103322c6548b5bd2afc13abc039c12fd *man/OjaNP-package.Rd
+f97542f1746cc0725310d6b7e5bd7536 *man/OjaNP-package.Rd
 6bc3a547d153f11beadbccb02beb9607 *man/biochem.Rd
 da2375f0bf5c7a1bd536449540864c1d *man/hyperplane.Rd
 b372f5b2e43d951e3c93eb3b8ff583a4 *man/oja1sampleTest.Rd
@@ -58,7 +58,7 @@ d1d09181b3cd081285ca4605003c7cc5 *src/MersenneTwister.h
 870b723251945c9ca7c22625202f5cad *src/_Vector.cpp
 98154ccf06d4b6b35fa4adb5e7768261 *src/_Vector.h
 c13e10e5e5d4391ba1815aa28cfb607e *src/algorithms.cpp
-248c129e080b3f61aee106f15462efb5 *src/bounded_search.cpp
+b961b01637ec439abbfe2150a1fd1ea3 *src/bounded_search.cpp
 af785a93c59adb892646390aac717d0b *src/data.cpp
 b5903eaeecd156e4a4c840824e98669a *src/data.h
 79d9487078629692fc73e4adf96210e7 *src/det.c
@@ -76,7 +76,7 @@ c910f1bb8d3c0bc4c348566796eb2e1e *src/lattice.cpp
 07ac39b049d8fe346ecec163fa35f846 *src/lattice.h
 e113e545c7e1dd65e2f0aaf2bc728129 *src/line.cpp
 7e21bf0d57685ac954260a9b73275495 *src/line.h
-9aa30771e27ce093761e6a7ea9dcd52c *src/matrix.h
+45b4459bcbb2a919046f3964fd1b9693 *src/matrix.h
 b395b77da3ada02781e9302d40231acd *src/matrix_wrapper.cpp
 a05257659b6b6526d985460403ecf137 *src/matrix_wrapper.h
 b17deb259796d1529a9e955a05b8470a *src/misc.cpp
