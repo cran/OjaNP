@@ -79,6 +79,7 @@ OjaPoint OjaData::median()
 	  case FOLLOW_INTERSECTION_LINES:
 		  return medianFollowIntersectionLines();
 	  case FOLLOW_INTERSECTION_LINES_BOUNDED:
+	    return medianFollowIntersectionLinesBounded();  // This is a test, if this return fixed the valgrind message on this line! Check with Oleksii if the return is correct!!! (DF)
 	  case FOLLOW_INTERSECTION_LINES_BOUNDED_APPROX:
 		  return medianFollowIntersectionLinesBounded();
 	  case BRUTE_FORCE:
@@ -299,8 +300,9 @@ OjaPoint OjaData::medianFollowIntersectionLines()
 
 	clock_t hp_generated = clock();
 
-	FLOG("hp generated " << double(hp_generated - begin) / CLOCKS_PER_SEC);
-
+	LOGTIME("hp generated " << double(hp_generated - begin) / CLOCKS_PER_SEC);
+	LOGTIME("bounds generated 0");
+	
 	/* 2. */
     OjaLine L(*this);
 	IndexIdentifier Lid,Tid;
@@ -431,10 +433,10 @@ OjaPoint OjaData::medianFollowIntersectionLines()
 	FLOG("! Minimum " << Tid << " (" << hatT.location() << ") (object function " << hatD << ")");
 
 	clock_t end = clock();
-	double elapsed_secst = double(end - begin) / CLOCKS_PER_SEC;
+	double elapsed_secst = double(end - hp_generated) / CLOCKS_PER_SEC;
 	double elapsed_secs = double(end - hp_generated) / CLOCKS_PER_SEC;
 
-	FLOG("counter: " << counter - 1 << "\nTime total: " << elapsed_secst << "\nTime count: " << elapsed_secs);
+	LOGTIME("counter: " << counter - 1 << "\nTime total: " << elapsed_secst << "\nTime count: " << elapsed_secs);
 
 //	fout.close();
 
